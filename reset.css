@@ -1,0 +1,70 @@
+/* Прибираємо відступи та поля */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5 елементи */
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section {
+  display: block;
+}
+
+/* Базові налаштування */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Шрифти */
+body {
+  line-height: 1;
+  font-family: "STIX Two Text", serif;}
+
+/* Списки */
+ol, ul {
+  list-style: none;
+}
+
+/* Цитати */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+/* Таблиці */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Посилання */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Зображення */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Кнопки та інпути */
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+.container{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
