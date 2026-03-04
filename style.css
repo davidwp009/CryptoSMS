@@ -1,91 +1,109 @@
+/*Фон – як на макеті*/
 .background {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #86b3c6, #3f798b);
+    background: radial-gradient(circle at center, #a7d0db 0%, #6ea3b4 40%, #3c6c80 100%);
 }
 
+/* Карточка */
 .login-card {
-    width: 350px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
+    width: 400px;
+    padding: 70px 40px 40px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border-radius: 12px;
     position: relative;
     text-align: left;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
 }
 
+/* Аватар */
 .avatar {
-    width: 90px;
-    height: 90px;
-    background: #0b3954;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    background: #0b2d4a;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: -45px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .avatar img {
-    width: 45px;
-    opacity: 0.9;
+    width: 65px;
+    opacity: 0.95;
 }
 
+/* LABEL + ICON */
 .input-group {
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
 label {
-    font-size: 14px;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #e9f4ff;
+    gap: 8px;
 }
 
+.icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* Inputs */
 .input-group input {
     width: 100%;
-    padding: 10px 5px;
+    padding: 12px 5px;
     border: none;
-    border-bottom: 1px solid #ffffffa8;
+    border-bottom: 1px solid #d4e8ff55;
     background: transparent;
-    color: #fff;
+    color: #e6f3ff;
+    font-size: 16px;
+    margin-top: 8px;
     outline: none;
-    margin-bottom: 25px;
 }
 
+/* Options row */
 .options {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-top: -10px;
 }
 
 .remember {
-    font-size: 13px;
-    color: #fff;
+    font-size: 14px;
+    color: #e6f3ffcc;
 }
 
 .forgot {
-    font-size: 13px;
-    color: #fff;
+    font-size: 14px;
+    color: #e6f3ffdd;
     text-decoration: none;
-    opacity: 0.8;
 }
 
+/* Button */
 .login-btn {
     width: 100%;
-    background: #0b3954;
-    padding: 12px;
+    background: #0b2d4a;
+    padding: 15px;
     border: none;
+    border-radius: 6px;
     color: #fff;
-    margin-top: 20px;
-    font-size: 15px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: 25px;
     cursor: pointer;
-    border-radius: 5px;
     transition: 0.3s;
 }
 
 .login-btn:hover {
-    background: #092d42;
+    background: #072133;
 }
