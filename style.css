@@ -75,7 +75,7 @@ label {
 .options {
     display: flex;
     justify-content: space-between;
-    margin-top: -10px;
+    margin-top: 50px;
 }
 
 .remember {

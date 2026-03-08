@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Messenger</title>
+
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../chats.css">
+</head>
+<div id="addChatPopup" class="popup">
+    <div class="popup-content">
+
+        <h3>Create Chat</h3>
+        <input id="chatUserCode" placeholder="User code">
+        <input id="chatNameInput" placeholder="Chat name">
+        <input id="chatPasswordInput" placeholder="Password">
+        <button onclick="createChat()">Create</button>
+        <button onclick="closeAddChat()">Cancel</button>
+    </div>
+
+</div>
+<div id="deleteChatPopup" class="popup">
+    <div class="popup-content">
+        <h3>Delete Chat?</h3>
+        <button onclick="confirmDeleteChat()">Delete</button>
+        <button onclick="closeDeleteChat()">Cancel</button>
+    </div>
+</div>
+
+<body>
+
+    <div class="app">
+
+        <!-- LEFT SIDE -->
+        <div class="chat-list">
+
+            <div class="top-bar">
+                <div class="title">Messenger</div>
+
+                <div class="icons">
+                    ⚙️
+                </div>
+            </div>
+
+            <input class="search" placeholder="Search chats">
+
+            <div id="chatList"></div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="chat-window">
+
+            <div class="chat-header">
+
+                <div id="chatName">
+                    Select chat
+                </div>
+
+                <div class="header-icons">
+                    <button onclick="openAddChat()">+</button>
+                    <button onclick="openDeleteChat(currentChat)">🗑</button>
+
+                </div>
+
+            </div>
+
+
+            <div id="messages" class="messages"></div>
+
+
+            <div class="chat-input">
+
+                <input id="messageInput" placeholder="Type a message">
+
+                <button onclick="sendMessage()">
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/crypto.js"></script>
+    <script src="../js/chats.js"></script>
+    <script src="../js/massager.js"></script>
+
+</body>
+
+</html>

@@ -1,12 +1,57 @@
-async function encryptMessage(message, password){
-    const enc = new TextEncoder();
-    const key = await crypto.subtle.digest(
-        "SHA-256",
-        enc.encode(password)
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+
+async function generateKey(password){
+
+    const keyMaterial = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(password),
+        {name:"PBKDF2"},
+        false,
+        ["deriveKey"]
     );
-    return btoa(message);
+
+    return crypto.subtle.deriveKey(
+        {
+            name:"PBKDF2",
+            salt:encoder.encode("cryptosms"),
+            iterations:100000,
+            hash:"SHA-256"
+        },
+        keyMaterial,
+        {name:"AES-GCM",length:256},
+        false,
+        ["encrypt","decrypt"]
+    );
 }
 
-async function decryptMessage(message){
-    return atob(message);
+async function encryptMessage(text,password){
+
+    const key = await generateKey(password);
+
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+
+    const encrypted = await crypto.subtle.encrypt(
+        {name:"AES-GCM",iv},
+        key,
+        encoder.encode(text)
+    );
+
+    return {
+        iv:Array.from(iv),
+        data:Array.from(new Uint8Array(encrypted))
+    };
+}
+
+async function decryptMessage(data,iv,password){
+
+    const key = await generateKey(password);
+
+    const decrypted = await crypto.subtle.decrypt(
+        {name:"AES-GCM",iv:new Uint8Array(iv)},
+        key,
+        new Uint8Array(data)
+    );
+
+    return decoder.decode(decrypted);
 }

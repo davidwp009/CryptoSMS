@@ -1,0 +1,158 @@
+body{
+background:#e5e5e5;
+font-family:Arial;
+}
+
+.app{
+width:900px;
+height:600px;
+background:white;
+margin:40px auto;
+display:flex;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* CHAT LIST */
+
+.chat-list{
+width:300px;
+border-right:1px solid #ddd;
+display:flex;
+flex-direction:column;
+}
+
+/* TOP BAR */
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+padding:15px;
+font-weight:bold;
+border-bottom:1px solid #ddd;
+}
+
+/* SEARCH */
+
+.search{
+margin:10px;
+padding:10px;
+border-radius:6px;
+background:#f1f1f1;
+}
+
+/* CHAT ITEM */
+
+.chat-item{
+padding:12px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+}
+
+.chat-item:hover{
+background:#f5f5f5;
+}
+
+/* CHAT WINDOW */
+
+.chat-window{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+/* HEADER */
+
+.chat-header{
+padding:15px;
+border-bottom:1px solid #ddd;
+display:flex;
+justify-content:space-between;
+font-weight:bold;
+}
+
+/* MESSAGES */
+
+.messages{
+flex:1;
+padding:15px;
+overflow-y:auto;
+background:#fafafa;
+}
+
+/* MESSAGE */
+
+.message{
+max-width:60%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+background:#e4e6eb;
+}
+
+.message.my{
+margin-left:auto;
+background:#0084ff;
+color:white;
+}
+
+/* INPUT */
+
+.chat-input{
+display:flex;
+padding:10px;
+border-top:1px solid #ddd;
+}
+
+.chat-input input{
+flex:1;
+padding:10px;
+border-radius:6px;
+background:#f1f1f1;
+}
+
+.chat-input button{
+margin-left:10px;
+padding:10px 20px;
+background:#0084ff;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.popup-content{
+background:white;
+padding:30px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+gap:10px;
+width:250px;
+}
+
+.popup-content input{
+padding:10px;
+background:#f1f1f1;
+border-radius:6px;
+}
+
+.popup-content button{
+padding:10px;
+background:#0084ff;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
