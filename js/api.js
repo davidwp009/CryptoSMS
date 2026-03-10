@@ -1,5 +1,4 @@
-const API_URL = "https://cytoms.vstart.com.ua/api";
-
+const API_URL = "http://localhost/api/index.php?endpoint=";
 function getToken(){
     return localStorage.getItem("token");
 }
